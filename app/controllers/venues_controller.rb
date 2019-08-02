@@ -9,7 +9,7 @@ class VenuesController < ApplicationController
     end
 
     def index
-        @allvenues = Venue.all
+        @allvenues = Venue.all.shuffle
         @venues = @allvenues
         if params[:q] && params[:q].length > 0 
             @venues = @venues.select {|v| v.location.downcase.include?(params[:q].downcase) || 

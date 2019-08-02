@@ -11,14 +11,18 @@
 <%=form_for @artist do |f|%>
     <%=f.label :name%>
     <%=f.text_field :name%><br>
-    <%=f.file_field :avatar%>
+    <%=f.file_field :avatar%><br>
     <%=f.label :description%>
     <%=f.text_field :description%><br>
-    <%=f.label "Genre tags"%>
-    <%=f.collection_check_boxes :genre_ids, Genre.all, :id, :name%><br>
+    <%=f.label "Genres:"%>
+    <div class="tags">
+    <%=f.collection_check_boxes :genre_ids, Genre.all, :id, :name%>
+    </div>
+    <p>Or add a new genre:</p>
     <%=f.fields_for :genres, @artist.genres.build do |g|%>
         <%=g.text_field :name%><br>
     <%end%>
+
     <%=f.submit "Create Artist"%>
 <%end%>
 

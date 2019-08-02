@@ -34,6 +34,10 @@ gem 'jbuilder', '~> 2.5'
 #  Use ActiveStorage variant
   gem 'mini_magick', '~> 4.8'
 
+  # Faker added by Ursula
+  gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
+
+
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
